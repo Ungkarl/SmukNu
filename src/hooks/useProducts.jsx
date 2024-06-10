@@ -1,0 +1,62 @@
+import { useState, useEffect } from "react";
+
+const useProducts = () => {
+    const [products, setProducts] = useState([]);
+
+    useEffect(() => {
+        const getProducts = async () => {
+            const response = await fetch("https://smuknu.webmcdm.dk/products");
+            const data = await response.json();
+            setProducts(data);
+        };
+
+        getProducts();
+    }, []);
+
+    useEffect(() => {
+        console.log(products);
+    }, [products]);
+
+    return products;
+};
+
+export const useSelectedProducts = () => {
+    const products = useProducts();
+    const [selectedProducts, setSelectedProducts] = useState([]);
+
+    useEffect(() => {
+        const getSelectedProducts = () => {
+            const recommendedProducts = products.filter(product => product.recommended);
+            setSelectedProducts(recommendedProducts);
+        };
+
+        getSelectedProducts();
+    }, [products]); 
+
+    console.log(selectedProducts)
+    return selectedProducts;
+};
+
+
+export const getSingleProduct = async (id) => {
+    try {
+        // Fetch all products
+        const response = await fetch("https://smuknu.webmcdm.dk/products");
+        const products = await response.json();
+        console.log(products)
+
+        // Find the product with the matching ID
+        const product = products.find(item => item._id === id);
+
+        if (!product) {
+            throw new Error(`Product with ID ${id} not found`);
+        }
+
+        return product;
+    } catch (error) {
+        console.error("Error fetching single product:", error);
+        throw error; // Re-throw the error after logging it
+    }
+};
+
+export default useProducts;
