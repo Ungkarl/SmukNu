@@ -1,0 +1,28 @@
+.basketList {
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.basketItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.basketItem button {
+    background-color: #000;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+
+
+
+.basket {
+    position: relative;
+}
+

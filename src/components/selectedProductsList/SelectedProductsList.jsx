@@ -8,7 +8,7 @@ const SelectedProductsList = () => {
 
     useEffect(() => {
         setProducts(selectedProducts);
-        console.log(selectedProducts)
+      
     }, [selectedProducts]);
 
    

@@ -13,9 +13,7 @@ const useProducts = () => {
         getProducts();
     }, []);
 
-    useEffect(() => {
-        console.log(products);
-    }, [products]);
+  
 
     return products;
 };
@@ -33,19 +31,18 @@ export const useSelectedProducts = () => {
         getSelectedProducts();
     }, [products]); 
 
-    console.log(selectedProducts)
     return selectedProducts;
 };
 
 
 export const getSingleProduct = async (id) => {
     try {
-        // Fetch all products
+
         const response = await fetch("https://smuknu.webmcdm.dk/products");
         const products = await response.json();
-        console.log(products)
+  
 
-        // Find the product with the matching ID
+ 
         const product = products.find(item => item._id === id);
 
         if (!product) {
@@ -55,7 +52,7 @@ export const getSingleProduct = async (id) => {
         return product;
     } catch (error) {
         console.error("Error fetching single product:", error);
-        throw error; // Re-throw the error after logging it
+        throw error; 
     }
 };
 
