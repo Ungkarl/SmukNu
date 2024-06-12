@@ -1,0 +1,55 @@
+.becomeMemberContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px; 
+    padding-bottom: 80px;
+    padding-top: 80px;
+    background-color: #f7f0f2;
+    color: #000;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+
+    h1 {
+        font-size: 50px;
+        
+    }
+    .becomeMemberButton {
+        background-color: #fa96aa;
+        color: #fff;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        border-radius: 091201px;
+        border: none;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        text-wrap: nowrap;
+        &:hover {
+            background-color: #f7f0f2;
+            color: #fa96aa;
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .becomeMemberContainer {
+        padding-left: 100px;
+        padding-right: 100px;
+        h1 {
+            font-size: 80px;
+        }
+        .becomeMemberButton {
+            padding-left: 30px;
+            padding-right: 30px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+            font-size: 25px;
+        }
+    }
+}

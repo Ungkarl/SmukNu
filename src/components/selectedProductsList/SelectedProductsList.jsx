@@ -16,9 +16,12 @@ const SelectedProductsList = () => {
     return (
         <div className={styles.selectedProductsList}>
             <h1>UDVALGT<br></br> <span>SKØNHED</span></h1>
+            <div className={styles["product-container"]}>
             {products.map((product, index) => (
                 <ProductCard product={product} key={index} />
             ))}
+            </div>
+            
         </div>
     );
 };

@@ -14,7 +14,7 @@ const Hero = ({ type }) => {
           description: 'Herunder har vi samlet spørgsmål og svar om sundhed.',
           button: true,
           buttonText: 'Se udvalgte produkter',
-          bgImage: '../../../public/headers/front.jpg',
+          bgImage: '/public/headers/front.jpg',
           bannerColor: '#fff'
         };
       case 'spørg-om-sundhed':
@@ -22,21 +22,21 @@ const Hero = ({ type }) => {
           title: '',
           description: '',
           button: false,
-          bgImage: '../../../public/headers/front.jpg'
+          bgImage: '/public/headers/front.jpg'
         };
       case 'bliv-medlem':
         return {
           title: '',
           description: '',
           button: false,
-          bgImage: '../../../public/headers/front.jpg'
+          bgImage: '/public/headers/front.jpg'
         };
       case 'produkter':
         return {
           title: '',
           description: '',
           button: false,
-          bgImage: '../../../public/headers/front.jpg'
+          bgImage: '/public/headers/front.jpg'
         };
       default:
         return {

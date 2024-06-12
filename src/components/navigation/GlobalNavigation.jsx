@@ -36,7 +36,7 @@ const GlobalNavigation = () => {
                 <div className={styles.actions}>
                     <div className={styles.basket} onClick={toggleBasket}>
                         <FaBasketShopping />
-                        <span className={styles.quantity}>{basket.reduce((total, item) => total + item.quantity, 0)}</span>
+                        <span className={styles.quantity}>{basket.length}</span>
                     </div>
                     <div onClick={toggleNavigation}>
                         <FaBurger />

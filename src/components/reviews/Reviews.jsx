@@ -18,8 +18,8 @@ const Reviews = () => {
     }
 
     return (
-        <div>
-            <h2><span>SKØNHEDER</span><br></br>UDTALER</h2>
+        <div className={styles.container}>
+            <h2 className={styles["review-title"]}><span>SKØNHEDER</span><br></br>UDTALER</h2>
         <div className={styles.review}>
             <div className={styles["profile-image"]}>
                 <img src={review.image} alt={review.name} />
