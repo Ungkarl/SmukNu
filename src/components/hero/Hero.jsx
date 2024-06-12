@@ -56,7 +56,7 @@ const Hero = ({ type }) => {
         <h1 className={styles.heroTitle}>{heroContent.title}</h1>
         <p className={styles.heroDescription}>{heroContent.description}</p>
         {heroContent.button && (
-          <a href="#" className={styles.heroButton}>
+          <a href="#recommended" className={styles.heroButton}>
             {heroContent.buttonText}
           </a>
         )}

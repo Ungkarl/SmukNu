@@ -14,7 +14,7 @@ const SelectedProductsList = () => {
    
 
     return (
-        <div className={styles.selectedProductsList}>
+        <div className={styles.selectedProductsList} id="recommended">
             <h1>UDVALGT<br></br> <span>SKØNHED</span></h1>
             <div className={styles["product-container"]}>
             {products.map((product, index) => (

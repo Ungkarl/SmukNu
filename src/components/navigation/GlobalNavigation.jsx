@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { FaBurger, FaBasketShopping } from "react-icons/fa6";
 import { Link, NavLink } from "react-router-dom";
 import BasketList from "../basket/BasketList";  // Update the import path
@@ -27,6 +27,37 @@ const GlobalNavigation = () => {
         setBasketOpen(!basketOpen);
     };
 
+    const checkIfClickedInside = (e) => {
+        const navigation = document.querySelector(`.${styles.navigation}`);
+        const basket = document.querySelector(`.${styles.basket}`);
+        const basketList = document.querySelector(`.${styles.basketList}`);
+        basketList.addEventListener('click', (e) => {
+            e.stopPropagation();
+        });
+        if (navigation && navigation.contains(e.target)) {
+            return;
+        }
+        if (basket && basket.contains(e.target)) {
+            return;
+        }
+        if (basketList && basketList.contains(e.target)) {
+            return;
+        }
+        setMainNavigationOpen(false);
+        setBasketOpen(false);
+
+
+    };
+
+
+    useEffect(() => {
+        document.addEventListener('click', checkIfClickedInside);
+    
+        return () => {
+            document.removeEventListener('click', checkIfClickedInside);
+        };
+    }, []);
+
     return (
         <div className={styles.navigation}>
             <div className={styles.bar}>
@@ -38,7 +69,7 @@ const GlobalNavigation = () => {
                         <FaBasketShopping />
                         <span className={styles.quantity}>{basket.length}</span>
                     </div>
-                    <div onClick={toggleNavigation}>
+                    <div onClick={toggleNavigation} className={styles.burger}>
                         <FaBurger />
                     </div>
                 </div>
