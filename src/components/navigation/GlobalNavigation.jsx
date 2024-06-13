@@ -31,9 +31,11 @@ const GlobalNavigation = () => {
         const navigation = document.querySelector(`.${styles.navigation}`);
         const basket = document.querySelector(`.${styles.basket}`);
         const basketList = document.querySelector(`.${styles.basketList}`);
-        basketList.addEventListener('click', (e) => {
-            e.stopPropagation();
-        });
+        if (basketList) {
+            basketList.addEventListener('click', (e) => {
+                e.stopPropagation();
+            });
+        }
         if (navigation && navigation.contains(e.target)) {
             return;
         }

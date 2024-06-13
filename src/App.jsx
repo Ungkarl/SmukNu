@@ -3,6 +3,7 @@ import HomePage from "./pages/home/HomePage";
 import GlobalNavigation from "./components/navigation/GlobalNavigation";
 import GlobalFooter from "./components/footer/GlobalFooter";
 import SundhedPage from "./pages/sundhed/SundhedPage";
+import BlivMedlemPage from "./pages/blivMedlem/blivMedlemPage";
 
 
 function App() {
@@ -22,7 +23,7 @@ function App() {
     },
     {
       path: "/bliv-medlem",
-      element : <div>Bliv medlem</div>
+      element : <BlivMedlemPage></BlivMedlemPage>
     }
   ]);
 

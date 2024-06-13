@@ -1,6 +1,7 @@
 import { useReviews } from '../../hooks/useReviews';
 import styles from './reviews.module.css';
 import { useState, useEffect } from 'react';
+import ReactHtmlParser from 'react-html-parser';
 
 const Reviews = () => {
     const [review, setReview] = useState(null);
@@ -25,8 +26,9 @@ const Reviews = () => {
                 <img src={review.image} alt={review.name} />
             </div>
             <div className={styles["review-content"]}>
-            <p>{review.description}</p>
-                <h2>{review.name}<br></br><span>{review.byline}</span></h2>
+            <p>{ReactHtmlParser(review.description)}</p>
+            
+            <h2>{review.name}<br></br><span>{review.byline}</span></h2>
                
             </div>
         </div>

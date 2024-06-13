@@ -35,10 +35,24 @@ const Hero = ({ type }) => {
         };
       case 'bliv-medlem':
         return {
-          title: '',
-          description: '',
+          title: (
+            <>
+            BLIV<br></br>
+            MEDLEM
+            </>
+          ),
+          description:
+          (
+            <>Opret dig som medlem og få flere fordele og nyheder I det øjeblik vi har dem.<br></br> 
+            <br></br>
+            Send gerne ris eller ros med når du melder dig ind, vi er altid parate til dialog.</>
+          ),
           button: false,
-          bgImage: '/public/headers/front.jpg'
+          bgImage: '/public/headers/subscribers.jpg',
+          bannerColor: '#fff',
+          textColor: '#000',
+          titleColor: '#fa96aa'
+
         };
       case 'produkter':
         return {
@@ -62,7 +76,9 @@ const Hero = ({ type }) => {
   return (
     <div className={styles.heroContainer} style={{ backgroundImage: `url(${heroContent.bgImage})` }}>
       <div className={styles.banner} style={{ backgroundColor: heroContent.bannerColor, color:  heroContent.textColor }}>
-        <h1 className={styles.heroTitle}>{heroContent.title}</h1>
+      <h1 style={{ color: heroContent.titleColor ? heroContent.titleColor : heroContent.textColor }}>
+    {heroContent.title}
+</h1>
         <p className={styles.heroDescription}>{heroContent.description}</p>
         {heroContent.button && (
           <a href="#recommended" className={styles.heroButton}>
