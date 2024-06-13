@@ -1,0 +1,68 @@
+.accordion-container {
+    margin-top: 30px;
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 30px;
+}
+
+.accordion {
+    width: 100%;
+    border-top: 1px solid #fa96aa;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+}
+
+.accordion-title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    background-color: #fff;
+    z-index: 10;
+    cursor: pointer;
+}
+
+.accordion-title span {
+    font-weight: 800;
+    font-size: 25px;
+}
+
+.accordion-title h2 {
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.accordion-content {
+    position: relative;
+    width: 100%;
+    z-index: 9;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    box-sizing: border-box;
+    padding: 0;
+}
+
+.accordion-content-inner {
+    padding: 20px; /* Add inner padding to the content */
+}
+
+.accordion-content::before {
+    content: '';
+    display: block;
+    height: 0;
+    padding-top: 20px; /* Top padding */
+    margin-top: -20px; /* Adjust to match padding */
+}
+
+.accordion-content.open {
+    max-height: 1000px; /* High value to ensure enough space for content */
+}

@@ -2,7 +2,7 @@ import { useRoutes } from "react-router-dom";
 import HomePage from "./pages/home/HomePage";
 import GlobalNavigation from "./components/navigation/GlobalNavigation";
 import GlobalFooter from "./components/footer/GlobalFooter";
-
+import SundhedPage from "./pages/sundhed/SundhedPage";
 
 
 function App() {
@@ -18,7 +18,7 @@ function App() {
     },
     {
       path: "/spørg-om-sundhed",
-      element : <div>Spørg om sundhed</div>
+      element : <SundhedPage></SundhedPage>
     },
     {
       path: "/bliv-medlem",
