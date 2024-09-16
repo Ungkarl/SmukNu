@@ -39,7 +39,7 @@ const Accordion = ({ title, content }) => {
 
 const AccordionContainer = () => {
   const questions = useQuestions(); // Henter spørgsmålene her
-  console.log(questions);
+
 
   return (
     <div className={styles["accordion-container"]}>
